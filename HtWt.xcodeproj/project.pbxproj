@@ -94,10 +94,10 @@
 		B69578FA2B4FC4AA008344E2 /* HtWt */ = {
 			isa = PBXGroup;
 			children = (
-				B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */,
-				B69578FD2B4FC4AA008344E2 /* ContentView.swift */,
-				B69578FF2B4FC4AB008344E2 /* Assets.xcassets */,
+				B69579252B4FC772008344E2 /* Application */,
 				B69579012B4FC4AB008344E2 /* Preview Content */,
+				B69579272B4FC786008344E2 /* Resources */,
+				B69579262B4FC77E008344E2 /* Sources */,
 			);
 			path = HtWt;
 			sourceTree = "<group>";
@@ -125,6 +125,38 @@
 				B69579182B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift */,
 			);
 			path = HtWtUITests;
+			sourceTree = "<group>";
+		};
+		B69579252B4FC772008344E2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B69579262B4FC77E008344E2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B69579282B4FC7A6008344E2 /* View */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B69579272B4FC786008344E2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B69578FF2B4FC4AB008344E2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B69579282B4FC7A6008344E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B69578FD2B4FC4AA008344E2 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
