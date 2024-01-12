@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B69578FC2B4FC4AA008344E2 /* HtWtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */; };
-		B69578FE2B4FC4AA008344E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69578FD2B4FC4AA008344E2 /* ContentView.swift */; };
+		B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69578FD2B4FC4AA008344E2 /* MainView.swift */; };
 		B69579002B4FC4AB008344E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69578FF2B4FC4AB008344E2 /* Assets.xcassets */; };
 		B69579032B4FC4AB008344E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69579022B4FC4AB008344E2 /* Preview Assets.xcassets */; };
 		B695790D2B4FC4AB008344E2 /* HtWtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B695790C2B4FC4AB008344E2 /* HtWtTests.swift */; };
 		B69579172B4FC4AB008344E2 /* HtWtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579162B4FC4AB008344E2 /* HtWtUITests.swift */; };
 		B69579192B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579182B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift */; };
+		B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579292B4FD07D008344E2 /* MainHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		B69578F82B4FC4AA008344E2 /* HtWt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HtWt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtApp.swift; sourceTree = "<group>"; };
-		B69578FD2B4FC4AA008344E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B69578FD2B4FC4AA008344E2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B69578FF2B4FC4AB008344E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B69579022B4FC4AB008344E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B69579082B4FC4AB008344E2 /* HtWtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HtWtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		B69579122B4FC4AB008344E2 /* HtWtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HtWtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69579162B4FC4AB008344E2 /* HtWtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtUITests.swift; sourceTree = "<group>"; };
 		B69579182B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B69579292B4FD07D008344E2 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,8 @@
 		B69579282B4FC7A6008344E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B69578FD2B4FC4AA008344E2 /* ContentView.swift */,
+				B69578FD2B4FC4AA008344E2 /* MainView.swift */,
+				B69579292B4FD07D008344E2 /* MainHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,7 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69578FE2B4FC4AA008344E2 /* ContentView.swift in Sources */,
+				B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */,
+				B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */,
 				B69578FC2B4FC4AA008344E2 /* HtWtApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
