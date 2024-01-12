@@ -11,7 +11,7 @@ import SwiftUI
 struct HtWtApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
