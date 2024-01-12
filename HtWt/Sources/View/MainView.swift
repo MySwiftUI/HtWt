@@ -7,21 +7,28 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         ScrollView {
             LazyVStack(pinnedViews: .sectionHeaders) {
-                
+                Section(header: MainHeader(
+                    locationName: "서울시",
+                    currentTemp: "5º",
+                    weatherInfo: "대체로 흐림",
+                    maxTemp: "5º",
+                    minTemp: "-5º"
+                )) {
+                    
+                }
             }
-            ScrollView {
-                
-            }
+            .padding()
         }
+        .clipped()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
