@@ -73,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B641C11D2B52CD400025AE3A /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				B69579292B4FD07D008344E2 /* MainHeader.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
 		B69578EF2B4FC4AA008344E2 = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				B69578FD2B4FC4AA008344E2 /* MainView.swift */,
-				B69579292B4FD07D008344E2 /* MainHeader.swift */,
+				B641C11D2B52CD400025AE3A /* SubView */,
 			);
 			path = View;
 			sourceTree = "<group>";
