@@ -17,9 +17,14 @@ struct MainView: View {
                     weatherInfo: "대체로 흐림",
                     maxTemp: "5º",
                     minTemp: "-5º"
-                )) {
-                    
-                }
+                )
+                
+                HourlyWeatherView(
+                    descriptionText: "오늘 날씨는 맑습니다.",
+                    timeText: "9시",
+                    weatherImageName: "clear",
+                    tempText: "-5º"
+                )
             }
             .padding()
         }
