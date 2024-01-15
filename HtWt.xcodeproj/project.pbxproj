@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */; };
 		B69578FC2B4FC4AA008344E2 /* HtWtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */; };
 		B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69578FD2B4FC4AA008344E2 /* MainView.swift */; };
 		B69579002B4FC4AB008344E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69578FF2B4FC4AB008344E2 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		B69578F82B4FC4AA008344E2 /* HtWt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HtWt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtApp.swift; sourceTree = "<group>"; };
 		B69578FD2B4FC4AA008344E2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B641C11D2B52CD400025AE3A /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				B69579292B4FD07D008344E2 /* MainHeader.swift */,
+				B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
 		B69578EF2B4FC4AA008344E2 = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B69578FD2B4FC4AA008344E2 /* MainView.swift */,
-				B69579292B4FD07D008344E2 /* MainHeader.swift */,
+				B641C11D2B52CD400025AE3A /* SubView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */,
 				B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */,
 				B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */,
 				B69578FC2B4FC4AA008344E2 /* HtWtApp.swift in Sources */,
