@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */; };
-		B692C90A2B55669D00B6463C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C9092B55669D00B6463C /* Constants.swift */; };
 		B692C90C2B556B2800B6463C /* WeatherInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B692C90B2B556B2800B6463C /* WeatherInfo.plist */; };
+		B692C90E2B556D3200B6463C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C90D2B556D3200B6463C /* Constants.swift */; };
+		B692C9102B556D7000B6463C /* HtWt++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C90F2B556D7000B6463C /* HtWt++Bundle.swift */; };
 		B69578FC2B4FC4AA008344E2 /* HtWtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */; };
 		B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69578FD2B4FC4AA008344E2 /* MainView.swift */; };
 		B69579002B4FC4AB008344E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69578FF2B4FC4AB008344E2 /* Assets.xcassets */; };
@@ -40,8 +41,9 @@
 /* Begin PBXFileReference section */
 		B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		B692C9052B55661700B6463C /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
-		B692C9092B55669D00B6463C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B692C90B2B556B2800B6463C /* WeatherInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = WeatherInfo.plist; sourceTree = "<group>"; };
+		B692C90D2B556D3200B6463C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B692C90F2B556D7000B6463C /* HtWt++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HtWt++Bundle.swift"; sourceTree = "<group>"; };
 		B69578F82B4FC4AA008344E2 /* HtWt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HtWt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69578FB2B4FC4AA008344E2 /* HtWtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtApp.swift; sourceTree = "<group>"; };
 		B69578FD2B4FC4AA008344E2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -92,7 +94,8 @@
 		B692C9062B55662500B6463C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B692C9092B55669D00B6463C /* Constants.swift */,
+				B692C90D2B556D3200B6463C /* Constants.swift */,
+				B692C90F2B556D7000B6463C /* HtWt++Bundle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -320,7 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B692C90A2B55669D00B6463C /* Constants.swift in Sources */,
+				B692C9102B556D7000B6463C /* HtWt++Bundle.swift in Sources */,
+				B692C90E2B556D3200B6463C /* Constants.swift in Sources */,
 				B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */,
 				B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */,
 				B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */,
