@@ -98,6 +98,7 @@
 		B69578EF2B4FC4AA008344E2 = {
 			isa = PBXGroup;
 			children = (
+				B692C9052B55661700B6463C /* .gitignore.md */,
 				B69578FA2B4FC4AA008344E2 /* HtWt */,
 				B695790B2B4FC4AB008344E2 /* HtWtTests */,
 				B69579152B4FC4AB008344E2 /* HtWtUITests */,
@@ -118,7 +119,6 @@
 		B69578FA2B4FC4AA008344E2 /* HtWt */ = {
 			isa = PBXGroup;
 			children = (
-				B692C9052B55661700B6463C /* .gitignore.md */,
 				B69579252B4FC772008344E2 /* Application */,
 				B69579012B4FC4AB008344E2 /* Preview Content */,
 				B692C9062B55662500B6463C /* Common */,
