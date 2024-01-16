@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DailyWeatherView: View {
+struct DailyWeatherInfoView: View {
     var body: some View {
         HStack(spacing: 52) {
             Text("오늘")
@@ -65,8 +65,8 @@ struct DailyWeatherView: View {
     }
 }
 
-struct DailyWeatherView_Previews: PreviewProvider {
+struct DailyWeatherInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyWeatherView()
+        DailyWeatherInfoView()
     }
 }
