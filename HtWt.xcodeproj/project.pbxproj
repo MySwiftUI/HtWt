@@ -20,6 +20,7 @@
 		B69579192B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579182B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift */; };
 		B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579292B4FD07D008344E2 /* MainHeader.swift */; };
 		B6D547982B565A89000FDC31 /* DailyWeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */; };
+		B6D5479A2B56655F000FDC31 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D547992B56655F000FDC31 /* DailyWeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B69579182B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B69579292B4FD07D008344E2 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
 		B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherInfoView.swift; sourceTree = "<group>"; };
+		B6D547992B56655F000FDC31 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				B69579292B4FD07D008344E2 /* MainHeader.swift */,
 				B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */,
 				B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */,
+				B6D547992B56655F000FDC31 /* DailyWeatherView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */,
 				B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */,
 				B69578FC2B4FC4AA008344E2 /* HtWtApp.swift in Sources */,
+				B6D5479A2B56655F000FDC31 /* DailyWeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
