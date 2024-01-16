@@ -19,6 +19,7 @@
 		B69579172B4FC4AB008344E2 /* HtWtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579162B4FC4AB008344E2 /* HtWtUITests.swift */; };
 		B69579192B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579182B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift */; };
 		B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69579292B4FD07D008344E2 /* MainHeader.swift */; };
+		B6D547982B565A89000FDC31 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D547972B565A89000FDC31 /* DailyWeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B69579162B4FC4AB008344E2 /* HtWtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtUITests.swift; sourceTree = "<group>"; };
 		B69579182B4FC4AB008344E2 /* HtWtUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtWtUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B69579292B4FD07D008344E2 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
+		B6D547972B565A89000FDC31 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				B69579292B4FD07D008344E2 /* MainHeader.swift */,
 				B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */,
+				B6D547972B565A89000FDC31 /* DailyWeatherView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B692C9102B556D7000B6463C /* HtWt++Bundle.swift in Sources */,
+				B6D547982B565A89000FDC31 /* DailyWeatherView.swift in Sources */,
 				B692C90E2B556D3200B6463C /* Constants.swift in Sources */,
 				B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */,
 				B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */,
