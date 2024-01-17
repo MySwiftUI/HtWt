@@ -9,26 +9,37 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        ScrollView {
-            LazyVStack() {
-                MainHeader(
-                    locationName: "서울시",
-                    currentTemp: "5º",
-                    weatherInfo: "대체로 흐림",
-                    maxTemp: "5º",
-                    minTemp: "-5º"
-                )
-                
-                HourlyWeatherView(
-                    descriptionText: "오늘 날씨는 맑습니다.",
-                    timeText: "9시",
-                    weatherImageName: "clear",
-                    tempText: "-5º"
-                )
+        ZStack {
+            Image("bgClear")
+                .resizable()
+                .ignoresSafeArea()
+            
+            ScrollView(showsIndicators: false) {
+                LazyVStack() {
+                    MainHeader(
+                        locationName: "서울시",
+                        currentTemp: "5º",
+                        weatherInfo: "맑음",
+                        maxTemp: "최고:5º",
+                        minTemp: "최저:-5º"
+                    )
+                    .padding(.top, 54)
+                    .padding(.bottom, 78)
+                    
+                    HourlyWeatherView(
+                        descriptionText: "오늘 날씨는 맑습니다",
+                        timeText: "9시",
+                        weatherImageName: "clear",
+                        tempText: "-5º"
+                    )
+                    
+                    DailyWeatherView()
+                        .padding(.vertical, 12)
+                }
+                .padding(.horizontal, 16)
             }
-            .padding()
+            .clipped()
         }
-        .clipped()
     }
 }
 
