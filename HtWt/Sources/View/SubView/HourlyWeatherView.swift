@@ -20,51 +20,56 @@ struct HourlyWeatherView: View {
     @State var tempText: String
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(descriptionText)
-                .font(.system(size: 16))
-                .fontWeight(.light)
-                .foregroundColor(.white)
-                .padding([.top, .leading], 16)
+        ZStack {
+            Rectangle()
+                .background(.gray)
+                .opacity(0.3)
             
-            Divider()
-                .frame(height: 1)
-                .background(.white)
-                .opacity(0.2)
-                .padding(.horizontal, 16)
-                .padding(.top, 2)
-            
-            
-            // FIXME: - 20개 임의로 넣어뒀습니다. 추후 서버 데이터 받아오면 데이터 개수로 바뀔 예정입니다.
-            ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(0..<20) {_ in
-                        VStack {
-                            Text(timeText)
-                                .font(.system(size: 18))
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                            
-                            Image(weatherImageName)
-                                .resizable()
-                                .frame(width: 28, height: 28)
-                            
-                            Text(tempText)
-                                .font(.system(size: 20))
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+            VStack(alignment: .leading) {
+                Text(descriptionText)
+                    .font(.system(size: 16))
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding([.top, .leading], 16)
+                
+                Divider()
+                    .frame(height: 1)
+                    .background(.white)
+                    .opacity(0.2)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 2)
+                
+                
+                // FIXME: - 20개 임의로 넣어뒀습니다. 추후 서버 데이터 받아오면 데이터 개수로 바뀔 예정입니다.
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack {
+                        ForEach(0..<20) {_ in
+                            VStack {
+                                Text(timeText)
+                                    .font(.system(size: 18))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                
+                                Image(weatherImageName)
+                                    .resizable()
+                                    .frame(width: 28, height: 28)
+                                
+                                Text(tempText)
+                                    .font(.system(size: 20))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.horizontal, 12)
+                            .padding(.top, -8)
+                            .padding(.bottom, 4)
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.top, -8)
-                        .padding(.bottom, 4)
                     }
+                    .frame(height: 110)
                 }
-                .frame(height: 110)
+                .padding(.vertical, 4)
+                .padding(.horizontal, 8)
             }
-            .padding(.vertical, 4)
-            .padding(.horizontal, 8)
         }
-        .background(.black)     // 여기도 추후 바뀔 예정입니다.
         .cornerRadius(12)
     }
 }
