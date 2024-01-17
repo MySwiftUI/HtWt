@@ -91,8 +91,8 @@
 			children = (
 				B69579292B4FD07D008344E2 /* MainHeader.swift */,
 				B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */,
-				B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */,
 				B6D547992B56655F000FDC31 /* DailyWeatherView.swift */,
+				B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
