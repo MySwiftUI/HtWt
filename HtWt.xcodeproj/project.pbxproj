@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */; };
+		B666F3CA2B590871003588A7 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666F3C92B590871003588A7 /* AirQualityView.swift */; };
+		B666F3CC2B590A1E003588A7 /* AirQualitySubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666F3CB2B590A1E003588A7 /* AirQualitySubView.swift */; };
 		B692C90C2B556B2800B6463C /* WeatherInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B692C90B2B556B2800B6463C /* WeatherInfo.plist */; };
 		B692C90E2B556D3200B6463C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C90D2B556D3200B6463C /* Constants.swift */; };
 		B692C9102B556D7000B6463C /* HtWt++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692C90F2B556D7000B6463C /* HtWt++Bundle.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		B666F3C92B590871003588A7 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
+		B666F3CB2B590A1E003588A7 /* AirQualitySubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualitySubView.swift; sourceTree = "<group>"; };
 		B692C9052B55661700B6463C /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 		B692C90B2B556B2800B6463C /* WeatherInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = WeatherInfo.plist; sourceTree = "<group>"; };
 		B692C90D2B556D3200B6463C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -93,8 +97,18 @@
 				B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */,
 				B6D547992B56655F000FDC31 /* DailyWeatherView.swift */,
 				B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */,
+				B666F3C82B59085E003588A7 /* AirQuality */,
 			);
 			path = SubView;
+			sourceTree = "<group>";
+		};
+		B666F3C82B59085E003588A7 /* AirQuality */ = {
+			isa = PBXGroup;
+			children = (
+				B666F3C92B590871003588A7 /* AirQualityView.swift */,
+				B666F3CB2B590A1E003588A7 /* AirQualitySubView.swift */,
+			);
+			path = AirQuality;
 			sourceTree = "<group>";
 		};
 		B692C9062B55662500B6463C /* Common */ = {
@@ -332,6 +346,8 @@
 				B692C9102B556D7000B6463C /* HtWt++Bundle.swift in Sources */,
 				B6D547982B565A89000FDC31 /* DailyWeatherInfoView.swift in Sources */,
 				B692C90E2B556D3200B6463C /* Constants.swift in Sources */,
+				B666F3CA2B590871003588A7 /* AirQualityView.swift in Sources */,
+				B666F3CC2B590A1E003588A7 /* AirQualitySubView.swift in Sources */,
 				B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */,
 				B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */,
 				B69578FE2B4FC4AA008344E2 /* MainView.swift in Sources */,
