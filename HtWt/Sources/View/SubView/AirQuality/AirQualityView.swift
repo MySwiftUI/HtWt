@@ -9,7 +9,33 @@ import SwiftUI
 
 struct AirQualityView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Rectangle()
+                .background(.gray)
+                .opacity(0.3)
+            
+            VStack {
+                HStack {
+                    Image(systemName: "aqi.medium")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                    
+                    Text("대기질")
+                        .font(.system(size: 16))
+                        .fontWeight(.medium)
+                    
+                    Spacer()
+                }
+                .padding(.leading, 12)
+                .padding(.top, 16)
+                .foregroundColor(.white)
+                .opacity(0.6)
+                
+                AirQualitySubView()
+                    .padding(.top, -18)
+            }
+        }
+        .cornerRadius(12)
     }
 }
 
