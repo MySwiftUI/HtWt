@@ -34,6 +34,9 @@ struct MainView: View {
                     )
                     
                     DailyWeatherView()
+                        .padding(.top, 12)
+                    
+                    AirQualityView()
                         .padding(.vertical, 12)
                 }
                 .padding(.horizontal, 16)
