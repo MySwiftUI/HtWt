@@ -95,10 +95,9 @@
 		B641C11D2B52CD400025AE3A /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				B69579292B4FD07D008344E2 /* MainHeader.swift */,
-				B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */,
-				B6D547992B56655F000FDC31 /* DailyWeatherView.swift */,
-				B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */,
+				B6C4DBCF2B5C102E0040FED9 /* Header */,
+				B6C4DBD02B5C10390040FED9 /* HourlyWeather */,
+				B6C4DBD12B5C10470040FED9 /* DailyWeather */,
 				B666F3C82B59085E003588A7 /* AirQuality */,
 			);
 			path = SubView;
@@ -212,6 +211,31 @@
 				B641C11D2B52CD400025AE3A /* SubView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B6C4DBCF2B5C102E0040FED9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B69579292B4FD07D008344E2 /* MainHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		B6C4DBD02B5C10390040FED9 /* HourlyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				B641C11E2B52CDFD0025AE3A /* HourlyWeatherView.swift */,
+			);
+			path = HourlyWeather;
+			sourceTree = "<group>";
+		};
+		B6C4DBD12B5C10470040FED9 /* DailyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				B6D547992B56655F000FDC31 /* DailyWeatherView.swift */,
+				B6D547972B565A89000FDC31 /* DailyWeatherInfoView.swift */,
+			);
+			path = DailyWeather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
