@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SearchPostsResponse: Codable {
+struct CurrentWeatherModel: Codable {
     let coord: Coord
     let weather: [Weather]
     let base: String
