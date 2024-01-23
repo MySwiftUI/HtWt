@@ -8,32 +8,30 @@
 import SwiftUI
 
 struct MainHeader: View {
-    @State var locationName: String
-    @State var currentTemp: String
-    @State var weatherInfo: String
-    @State var maxTemp: String
-    @State var minTemp: String
+    @ObservedObject var viewModel = MainHeaderViewModel(
+        location: LocationService().getLocation()
+    )
     
     var body: some View {
         VStack(alignment: .center) {
-            Text(locationName)
+            Text(viewModel.locationName ?? "")
                 .font(.system(size: 36))
                 .fontWeight(.regular)
             
-            Text(currentTemp)
+            Text(viewModel.currentTemp ?? "")
                 .font(.system(size: 108))
                 .fontWeight(.thin)
             
-            Text(weatherInfo)
+            Text(viewModel.weatherDescription ?? "")
                 .font(.system(size: 28))
                 .fontWeight(.light)
             
             HStack(spacing: 10) {
-                Text(maxTemp)
+                Text(viewModel.maxTemp ?? "")
                     .font(.system(size: 24))
                     .fontWeight(.medium)
                 
-                Text(minTemp)
+                Text(viewModel.minTemp ?? "")
                     .font(.system(size: 24))
                     .fontWeight(.medium)
             }
@@ -49,12 +47,6 @@ struct MainHeader: View {
 
 struct MainHeader_Previews: PreviewProvider {
     static var previews: some View {
-        MainHeader(
-            locationName: "서울시",
-            currentTemp: "5º",
-            weatherInfo: "대체로 흐림",
-            maxTemp: "최고:5º",
-            minTemp: "최저:-5º"
-        )
+        MainHeader()
     }
 }
