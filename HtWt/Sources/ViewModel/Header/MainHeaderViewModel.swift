@@ -11,7 +11,11 @@ import CoreLocation
 import Combine
 
 final class MainHeaderViewModel: ObservableObject {
-    @Published var currentWeather: CurrentWeatherModel?
+    @Published var locationName: String?
+    @Published var currentTemp: String?
+    @Published var weatherDescription: String?
+    @Published var maxTemp: String?
+    @Published var minTemp: String?
     
     private var location: CLLocationCoordinate2D
     private lazy var cancellable = Set<AnyCancellable>()
@@ -43,8 +47,18 @@ final class MainHeaderViewModel: ObservableObject {
         .sink(receiveCompletion: { _ in
             print("DEBUG: requestCurrentWeather() 실행이 완료되었습니다.")
         }, receiveValue: { response in
-            self.currentWeather = response
+            self.viewDataHandler(data: response)
         })
         .store(in: &cancellable)
+    }
+    
+    private func viewDataHandler(
+        data: CurrentWeatherModel
+    ) {
+        locationName = data.name
+        currentTemp = "\(Int(data.main.temp))"
+        weatherDescription = data.weather.first?.description
+        maxTemp = "최고:\(Int(data.main.tempMax))º"
+        minTemp = "최저:\(Int(data.main.tempMin))º"
     }
 }
