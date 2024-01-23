@@ -16,13 +16,7 @@ struct MainView: View {
             
             ScrollView(showsIndicators: false) {
                 LazyVStack() {
-                    MainHeader(
-                        locationName: "서울시",
-                        currentTemp: "5º",
-                        weatherInfo: "맑음",
-                        maxTemp: "최고:5º",
-                        minTemp: "최저:-5º"
-                    )
+                    MainHeader()
                     .padding(.top, 54)
                     .padding(.bottom, 78)
                     
