@@ -8,5 +8,6 @@
 import Foundation
 
 struct Constants {
-    static let BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
+    static let CURRENT_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
+    static let FIVEDAYS_THREEHOURS_URL = "https://api.openweathermap.org/data/2.5/forecast"
 }
