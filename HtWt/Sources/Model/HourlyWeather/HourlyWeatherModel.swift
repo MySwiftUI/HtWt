@@ -63,7 +63,7 @@ struct MainClass: Codable {
 struct HourlyWeather: Codable {
     let id: Int
     let main: MainEnum
-    let description: Description
+    let description: String
     let icon: String
 }
 
@@ -76,14 +76,6 @@ struct HourlySys: Codable {
 enum Pod: String, Codable {
     case d = "d"
     case n = "n"
-}
-
-/// 간단한 설명
-enum Description: String, Codable {
-    case brokenClouds = "broken clouds"
-    case clearSky = "clear sky"
-    case fewClouds = "few clouds"
-    case scatteredClouds = "scattered clouds"
 }
 
 /// 날씨 맑음, 흐림 관련
