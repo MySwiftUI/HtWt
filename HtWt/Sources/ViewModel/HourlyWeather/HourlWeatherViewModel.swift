@@ -10,7 +10,7 @@ import Alamofire
 import Combine
 import CoreLocation
 
-final class HourlWeatherViewModel: ObservableObject {
+final class HourlyWeatherViewModel: ObservableObject {
     @Published var wData: HourlyWeatherModel?
     
     private var location: CLLocationCoordinate2D
@@ -33,19 +33,29 @@ final class HourlWeatherViewModel: ObservableObject {
             "appid" : Bundle.main.apiKey
         ]
         
+//        AF.request(
+//            Constants.FIVEDAYS_THREEHOURS_URL,
+//            method: .get,
+//            parameters: param,
+//            encoding: URLEncoding.queryString
+//        )
+//        .publishDecodable(type: HourlyWeatherModel.self)
+//        .compactMap { $0.value }
+//        .sink(receiveCompletion: { _ in
+//            print("DEBUG: requestHourlyWeather() 실행이 완료되었습니다.")
+//        }, receiveValue: { response in
+//            print("DEBUG: response is \(response)")
+//        })
+//        .store(in: &cancellables)
+
         AF.request(
             Constants.FIVEDAYS_THREEHOURS_URL,
             method: .get,
             parameters: param,
             encoding: URLEncoding.queryString
         )
-        .publishDecodable(type: HourlyWeatherModel.self)
-        .compactMap { $0.value }
-        .sink(receiveCompletion: { completion in
-            print("DEBUG: requestHourlyWeather() 실행이 완료되었습니다.")
-        }, receiveValue: { response in
-            print("DEBUG: response is \(response)")
-        })
-        .store(in: &cancellable)
+        .responseDecodable(of: HourlyWeatherModel.self) { response in
+            print("DEBUG: response is \(response.value)")
+        }
     }
 }
