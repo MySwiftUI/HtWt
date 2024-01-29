@@ -10,7 +10,7 @@ import Foundation
 struct HourlyWeatherModel: Codable {
     let cod: String
     let message, cnt: Int
-    let list: [List]
+    let list: [HourlyWeatherData]
     let city: City
 }
 
@@ -24,13 +24,14 @@ struct City: Codable {
 }
 
 /// 날씨 리스트
-struct List: Codable {
+struct HourlyWeatherData: Codable {
     let dt: Int
     let main: MainClass
     let weather: [HourlyWeather]
     let clouds: Clouds
     let wind: HourlyWind
-    let visibility, pop: Int
+    let visibility: Int
+    let pop: Double
     let sys: HourlySys
     let dtTxt: String
 
@@ -62,26 +63,12 @@ struct MainClass: Codable {
 /// 추가 기상 정보
 struct HourlyWeather: Codable {
     let id: Int
-    let main: MainEnum
-    let description: String
-    let icon: String
+    let main, description, icon: String
 }
 
 /// Sys
 struct HourlySys: Codable {
-    let pod: Pod
-}
-
-/// 낮, 밤
-enum Pod: String, Codable {
-    case d = "d"
-    case n = "n"
-}
-
-/// 날씨 맑음, 흐림 관련
-enum MainEnum: String, Codable {
-    case clear = "Clear"
-    case clouds = "Clouds"
+    let pod: String
 }
 
 /// 시간 풍속 정보
