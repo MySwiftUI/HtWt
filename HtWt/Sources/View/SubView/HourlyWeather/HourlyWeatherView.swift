@@ -19,6 +19,10 @@ struct HourlyWeatherView: View {
     @State var weatherImageName: String
     @State var tempText: String
     
+    @ObservedObject var viewModel = HourlyWeatherViewModel(
+        location: LocationService().getLocation()
+    )
+    
     var body: some View {
         ZStack {
             Rectangle()
