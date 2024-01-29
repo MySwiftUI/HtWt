@@ -11,20 +11,19 @@ import Combine
 import CoreLocation
 
 final class HourlyWeatherViewModel: ObservableObject {
-    @Published var wData: HourlyWeatherModel?
+    @Published var hourlyWeatherData: [HourlyWeatherData] = []
     
-    private var location: CLLocationCoordinate2D
-    private lazy var cancellable = Set<AnyCancellable>()
+    private var cancellable = Set<AnyCancellable>()
     
     init(
         location: CLLocationCoordinate2D
     ) {
-        self.location = location
-        requestHourlyWeather()
+        requestHourlyWeather(location: location)
     }
     
-    private func requestHourlyWeather() {
-        print("DEBUG: requestHourlyWeather() --- ")
+    private func requestHourlyWeather(
+        location: CLLocationCoordinate2D
+    ) {
         let param: [String:Any] = [
             "units" : "metric",
             "lang" : "KR",
@@ -33,29 +32,25 @@ final class HourlyWeatherViewModel: ObservableObject {
             "appid" : Bundle.main.apiKey
         ]
         
-//        AF.request(
-//            Constants.FIVEDAYS_THREEHOURS_URL,
-//            method: .get,
-//            parameters: param,
-//            encoding: URLEncoding.queryString
-//        )
-//        .publishDecodable(type: HourlyWeatherModel.self)
-//        .compactMap { $0.value }
-//        .sink(receiveCompletion: { _ in
-//            print("DEBUG: requestHourlyWeather() 실행이 완료되었습니다.")
-//        }, receiveValue: { response in
-//            print("DEBUG: response is \(response)")
-//        })
-//        .store(in: &cancellables)
-
         AF.request(
             Constants.FIVEDAYS_THREEHOURS_URL,
             method: .get,
             parameters: param,
             encoding: URLEncoding.queryString
         )
-        .responseDecodable(of: HourlyWeatherModel.self) { response in
-            print("DEBUG: response is \(response.value)")
-        }
+        .publishDecodable(type: HourlyWeatherModel.self)
+        .compactMap { $0.value }
+        .sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                print("DEBUG: reqeustHourlWeather() 서버 통신이 완료되었습니다.")
+
+            case .failure(let error):
+                print("DEBUG: requestHourlyWeather() 서버 통신 에러입니다.\n\(error.localizedDescription)")
+            }
+        }, receiveValue: { response in
+            self.hourlyWeatherData = Array(response.list.prefix(24))
+        })
+        .store(in: &cancellable)
     }
 }
