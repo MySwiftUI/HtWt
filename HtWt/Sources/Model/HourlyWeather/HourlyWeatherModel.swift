@@ -81,7 +81,6 @@ struct HourlyWind: Codable {
 /// HourlyWeatherView UI를 위한 커스텀 구조체
 struct HourlyWeatherItem: Identifiable {
     var id: UUID
-    var description: String
     var timeText: String
     var weatherImageName: String
     var tempText: String
