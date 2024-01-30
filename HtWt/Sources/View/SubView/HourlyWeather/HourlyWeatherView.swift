@@ -30,47 +30,47 @@ struct HourlyWeatherView: View {
                 .opacity(0.3)
             
             VStack(alignment: .leading) {
-                Text(descriptionText)
-                    .font(.system(size: 16))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .padding([.top, .leading], 16)
-                
-                Divider()
-                    .frame(height: 1)
-                    .background(.white)
-                    .opacity(0.2)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 2)
-                
+                HStack {
+                    Image(systemName: "clock")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                    
+                    Text("시간별 일기 예보")
+                        .font(.system(size: 16))
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(.white)
+                .opacity(0.6)
+                .padding([.top, .leading], 16)
                 
                 // FIXME: - 20개 임의로 넣어뒀습니다. 추후 서버 데이터 받아오면 데이터 개수로 바뀔 예정입니다.
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
-                        ForEach(0..<20) {_ in
+                        ForEach(viewModel.hourlyWeatherViewItem) { item in
                             VStack {
-                                Text(timeText)
+                                Text(item.timeText)
                                     .font(.system(size: 18))
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                 
-                                Image(weatherImageName)
+                                Image("clear")
                                     .resizable()
                                     .frame(width: 28, height: 28)
                                 
-                                Text(tempText)
+                                Text(item.tempText)
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                             }
-                            .padding(.horizontal, 12)
+                            .padding(.horizontal, 4)
                             .padding(.top, -8)
                             .padding(.bottom, 4)
                         }
                     }
                     .frame(height: 110)
                 }
-                .padding(.vertical, 4)
+                .padding(.top, -2)
+                .padding(.bottom, 4)
                 .padding(.horizontal, 8)
             }
         }

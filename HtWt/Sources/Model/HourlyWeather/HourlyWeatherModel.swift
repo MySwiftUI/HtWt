@@ -77,3 +77,11 @@ struct HourlyWind: Codable {
     let deg: Int
     let gust: Double
 }
+
+/// HourlyWeatherView UI를 위한 커스텀 구조체
+struct HourlyWeatherItem: Identifiable {
+    var id: UUID
+    var timeText: String
+    var weatherImageName: String
+    var tempText: String
+}
