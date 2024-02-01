@@ -18,7 +18,7 @@ struct MainHeader: View {
                 .font(.system(size: 36))
                 .fontWeight(.regular)
             
-            Text(viewModel.currentTemp ?? "")
+            Text("\(viewModel.currentTemp ?? "")º")
                 .font(.system(size: 108))
                 .fontWeight(.thin)
             
