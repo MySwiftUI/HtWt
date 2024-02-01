@@ -56,26 +56,22 @@ final class HourlyWeatherViewModel: ObservableObject {
 }
 
 private extension HourlyWeatherViewModel {
-    /// 현재시간보다 이전인지 체크하기 위한 기능
-    func checkCurrentTime(
-        from sendDate: String
+    /// 현재시간 이전 및 내일모레 초과인지 체크하는 기능
+    func compareTime(
+        from target: String
     ) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.locale = Locale(identifier: "ko_KR")
         dateFormatter.timeZone = TimeZone(identifier: "KST")
-        return dateFormatter.string(from: Date()) < sendDate
-    }
-    
-    /// 내일모레를 초과하지 않기 위해 체크하는 기능
-    func checkTwoDaysLater(
-        from sendDate: String
-    ) -> Bool {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.timeZone = TimeZone(identifier: "KST")
-        return sendDate < dateFormatter.string(from: Calendar.current.date(bySetting: .day, value: 2, of: Date()) ?? Date())
+        
+        let currentDate = dateFormatter.string(from: Date())
+        let threeDaysLaterDate = dateFormatter.string(from: Calendar.current.date(
+            bySetting: .day,
+            value: 3,
+            of: Date()
+        ) ?? Date())
+        return currentDate < target && target < threeDaysLaterDate
     }
     
     /// 전체 시간을 시간으로만 변환 시켜주는 기능
@@ -110,7 +106,7 @@ private extension HourlyWeatherViewModel {
         
         for i in 0..<data.count {
             let time = data[i].dtTxt
-            if !(checkCurrentTime(from: time) && checkTwoDaysLater(from: time)) { continue }
+            if !compareTime(from: data[i].dtTxt) { continue }
             
             let uuid: String = String(describing: data[i].weather.first?.id)
             appendData.id = UUID(uuidString: uuid) ?? UUID()
