@@ -53,7 +53,7 @@ struct HourlyWeatherView: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                 
-                                Image("clear")
+                                Image(item.weatherImageName)
                                     .resizable()
                                     .frame(width: 28, height: 28)
                                 
