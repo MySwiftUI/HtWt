@@ -67,9 +67,9 @@ private extension HourlyWeatherViewModel {
         
         let currentDate = dateFormatter.string(from: Date())
         let threeDaysLaterDate = dateFormatter.string(from: Calendar.current.date(
-            bySetting: .day,
-            value: 3,
-            of: Date()
+            byAdding: .day,
+            value: 2,
+            to: Date()
         ) ?? Date())
         return currentDate < target && target < threeDaysLaterDate
     }
