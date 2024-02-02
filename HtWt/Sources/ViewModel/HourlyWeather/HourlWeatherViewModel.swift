@@ -100,7 +100,7 @@ private extension HourlyWeatherViewModel {
         var appendData = HourlyWeatherItem(
             id: UUID(),
             timeText: "",
-            weatherImageName: "clear",
+            weatherImageName: "01d",
             tempText: ""
         )
         
@@ -111,7 +111,7 @@ private extension HourlyWeatherViewModel {
             let uuid: String = String(describing: data[i].weather.first?.id)
             appendData.id = UUID(uuidString: uuid) ?? UUID()
             appendData.timeText = changeFullDateToHourString(from: time)
-            appendData.weatherImageName = data[i].weather.first?.icon ?? "clear"
+            appendData.weatherImageName = data[i].weather.first?.icon ?? "01d"
             appendData.tempText = "\(Int(data[i].main.temp))º"
             hourlyWeatherViewItem.append(appendData)
         }

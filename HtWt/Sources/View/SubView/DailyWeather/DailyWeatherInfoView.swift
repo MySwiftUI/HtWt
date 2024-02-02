@@ -20,7 +20,7 @@ struct DailyWeatherInfoView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                 
-                Image("clear")
+                Image("01d")
                     .resizable()
                     .frame(width: 32, height: 32)
                 
