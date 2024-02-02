@@ -20,12 +20,7 @@ struct MainView: View {
                     .padding(.top, 54)
                     .padding(.bottom, 78)
                     
-                    HourlyWeatherView(
-                        descriptionText: "오늘 날씨는 맑습니다",
-                        timeText: "9시",
-                        weatherImageName: "clear",
-                        tempText: "-5º"
-                    )
+                    HourlyWeatherView()
                     
                     DailyWeatherView()
                         .padding(.top, 12)
