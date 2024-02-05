@@ -32,7 +32,6 @@ struct HourlyWeatherView: View {
                 .opacity(0.6)
                 .padding([.top, .leading], 16)
                 
-                // FIXME: - 20개 임의로 넣어뒀습니다. 추후 서버 데이터 받아오면 데이터 개수로 바뀔 예정입니다.
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         ForEach(viewModel.hourlyWeatherViewItem) { item in
