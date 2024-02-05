@@ -31,12 +31,12 @@ struct DailyWeatherView: View {
                 .foregroundColor(.white)
                 .opacity(0.6)
                 
-                ForEach(0..<10) { _ in
+                ForEach(0..<10) { idx in
                     Divider()
                         .background(.white)
                         .padding(.horizontal, 12)
                     
-                    DailyWeatherInfoView()
+                    DailyWeatherInfoView(isToday: idx == 0)
                         .padding(.vertical, -12)
                 }
             }

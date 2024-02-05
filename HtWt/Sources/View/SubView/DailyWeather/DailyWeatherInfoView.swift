@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DailyWeatherInfoView: View {
+    @State var isToday: Bool
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -47,15 +49,16 @@ struct DailyWeatherInfoView: View {
                                 .offset(x: 10)      /// offset X 잡아줘야 할 것으로 보임
                         }
                         
-                        Circle()
-                            .foregroundColor(.white)
-                            .overlay(Circle()
-                                .stroke(lineWidth: 3)
-                                .foregroundColor(.black).opacity(0.2)
-                            )
-                            .frame(width: 5, height: 5)
-                            .offset(x: -15)         /// 현재 온도 표시(offset x 위치 조정)
-                        
+                        if isToday {
+                            Circle()
+                                .foregroundColor(.white)
+                                .overlay(Circle()
+                                    .stroke(lineWidth: 3)
+                                    .foregroundColor(.black).opacity(0.2)
+                                )
+                                .frame(width: 5, height: 5)
+                                .offset(x: -15)         /// 현재 온도 표시(offset x 위치 조정)
+                        }
                     }
                     .frame(height: 5)
                     
@@ -67,11 +70,5 @@ struct DailyWeatherInfoView: View {
             }
             .padding()
         }
-    }
-}
-
-struct DailyWeatherInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyWeatherInfoView()
     }
 }
