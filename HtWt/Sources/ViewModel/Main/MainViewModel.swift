@@ -33,7 +33,7 @@ final class MainViewModel: ObservableObject {
         ]
         
         AF.request(
-            Constants.FIVEDAYS_THREEHOURS_URL,
+            Constants.BASE_URL + Constants.FIVEDAYS_THREEHOURS_PATH,
             method: .get,
             parameters: param,
             encoding: URLEncoding.queryString
