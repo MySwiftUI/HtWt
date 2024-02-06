@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct HtWtApp: App {
+    private let viewModel = MainViewModel(
+        location: LocationService().getLocation()
+    )
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(viewModel: viewModel)
         }
     }
 }
