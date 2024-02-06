@@ -1,61 +1,21 @@
 //
-//  HourlWeatherViewModel.swift
+//  HourlyWeatherViewModel.swift
 //  HtWt
 //
-//  Created by 이지석 on 2024/01/24.
+//  Created by 이지석 on 2024/02/06.
 //
 
 import Foundation
-import Alamofire
-import Combine
-import CoreLocation
 
 final class HourlyWeatherViewModel: ObservableObject {
     @Published var hourlyWeatherViewItem: [HourlyWeatherItem] = []
     
-    private var cancellable = Set<AnyCancellable>()
-    
     init(
-        location: CLLocationCoordinate2D
+        data: [HourlyWeatherData]
     ) {
-        requestHourlyWeather(location: location)
+        hourlyWeatherDataHandler(data: data)
     }
     
-    private func requestHourlyWeather(
-        location: CLLocationCoordinate2D
-    ) {
-        let param: [String:Any] = [
-            "units" : "metric",
-            "lang" : "KR",
-            "lat" : location.latitude,
-            "lon" : location.longitude,
-            "appid" : Bundle.main.apiKey
-        ]
-        
-        AF.request(
-            Constants.FIVEDAYS_THREEHOURS_URL,
-            method: .get,
-            parameters: param,
-            encoding: URLEncoding.queryString
-        )
-        .publishDecodable(type: HourlyWeatherModel.self)
-        .compactMap { $0.value }
-        .sink(receiveCompletion: { completion in
-            switch completion {
-            case .finished:
-                print("DEBUG: reqeustHourlWeather() 서버 통신이 완료되었습니다.")
-
-            case .failure(let error):
-                print("DEBUG: requestHourlyWeather() 서버 통신 에러입니다.\n\(error.localizedDescription)")
-            }
-        }, receiveValue: { response in
-            self.hourlyWeatherDataHandler(data: response.list)
-        })
-        .store(in: &cancellable)
-    }
-}
-
-private extension HourlyWeatherViewModel {
     /// 현재시간 이전 및 내일모레 초과인지 체크하는 기능
     func compareTime(
         from target: String

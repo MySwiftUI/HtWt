@@ -37,7 +37,7 @@ final class MainHeaderViewModel: ObservableObject {
         ]
         
         AF.request(
-            Constants.CURRENT_WEATHER_URL,
+            Constants.BASE_URL + Constants.CURRENT_PATH,
             method: .get,
             parameters: param,
             encoding: URLEncoding.queryString

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var viewModel: MainViewModel
+    
     var body: some View {
         ZStack {
             Image("bgClear")
@@ -20,7 +22,9 @@ struct MainView: View {
                     .padding(.top, 54)
                     .padding(.bottom, 78)
                     
-                    HourlyWeatherView()
+                    HourlyWeatherView(
+                        viewModel: HourlyWeatherViewModel(data: viewModel.hourlyWeatherData)
+                    )
                     
                     DailyWeatherView()
                         .padding(.top, 12)
@@ -32,11 +36,5 @@ struct MainView: View {
             }
             .clipped()
         }
-    }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }
