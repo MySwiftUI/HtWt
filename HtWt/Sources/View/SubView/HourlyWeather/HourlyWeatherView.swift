@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct HourlyWeatherView: View {
-    @ObservedObject var viewModel = HourlyWeatherViewModel(
-        location: LocationService().getLocation()
-    )
+    @ObservedObject var viewModel: HourlyWeatherViewModel
     
     var body: some View {
         ZStack {
@@ -66,8 +64,3 @@ struct HourlyWeatherView: View {
     }
 }
 
-struct HourlyWeatherView_Previews: PreviewProvider {
-    static var previews: some View {
-        HourlyWeatherView()
-    }
-}
