@@ -29,6 +29,7 @@
 		B6D5479A2B56655F000FDC31 /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D547992B56655F000FDC31 /* DailyWeatherView.swift */; };
 		B6E1983C2B60FF4B000D5E3E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1983B2B60FF4B000D5E3E /* MainViewModel.swift */; };
 		B6E1983F2B61003C000D5E3E /* HourlyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E1983E2B61003C000D5E3E /* HourlyWeatherModel.swift */; };
+		B6ECC6592B72321300956E04 /* HourlyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC6582B72321300956E04 /* HourlyWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		B6D547992B56655F000FDC31 /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
 		B6E1983B2B60FF4B000D5E3E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B6E1983E2B61003C000D5E3E /* HourlyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherModel.swift; sourceTree = "<group>"; };
+		B6ECC6582B72321300956E04 /* HourlyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			children = (
 				B6E1983A2B60FF38000D5E3E /* Main */,
 				B6C4DBD52B5C10CC0040FED9 /* Header */,
+				B6ECC6572B7231FE00956E04 /* HourlyWeather */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -297,6 +300,14 @@
 			isa = PBXGroup;
 			children = (
 				B6E1983E2B61003C000D5E3E /* HourlyWeatherModel.swift */,
+			);
+			path = HourlyWeather;
+			sourceTree = "<group>";
+		};
+		B6ECC6572B7231FE00956E04 /* HourlyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				B6ECC6582B72321300956E04 /* HourlyWeatherViewModel.swift */,
 			);
 			path = HourlyWeather;
 			sourceTree = "<group>";
@@ -444,6 +455,7 @@
 				B692C90E2B556D3200B6463C /* Constants.swift in Sources */,
 				B666F3CA2B590871003588A7 /* AirQualityView.swift in Sources */,
 				B666F3CC2B590A1E003588A7 /* AirQualitySubView.swift in Sources */,
+				B6ECC6592B72321300956E04 /* HourlyWeatherViewModel.swift in Sources */,
 				B641C11F2B52CDFD0025AE3A /* HourlyWeatherView.swift in Sources */,
 				B695792A2B4FD07D008344E2 /* MainHeader.swift in Sources */,
 				B6C4DBDA2B5C11130040FED9 /* CurrentWeatherModel.swift in Sources */,
