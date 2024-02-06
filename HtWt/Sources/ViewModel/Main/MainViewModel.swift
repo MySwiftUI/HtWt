@@ -10,7 +10,7 @@ import Alamofire
 import Combine
 import CoreLocation
 
-final class HourlyWeatherViewModel: ObservableObject {
+final class MainViewModel: ObservableObject {
     @Published var hourlyWeatherViewItem: [HourlyWeatherItem] = []
     
     private var cancellable = Set<AnyCancellable>()
@@ -55,7 +55,7 @@ final class HourlyWeatherViewModel: ObservableObject {
     }
 }
 
-private extension HourlyWeatherViewModel {
+private extension MainViewModel {
     /// 현재시간 이전 및 내일모레 초과인지 체크하는 기능
     func compareTime(
         from target: String
