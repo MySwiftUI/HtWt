@@ -30,6 +30,10 @@ struct HourlyWeatherView: View {
                 .opacity(0.6)
                 .padding([.top, .leading], 16)
                 
+                Divider()
+                    .background(.white)
+                    .padding(.horizontal, 12)
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         ForEach(viewModel.hourlyWeatherViewItem) { item in
@@ -55,8 +59,6 @@ struct HourlyWeatherView: View {
                     }
                     .frame(height: 110)
                 }
-                .padding(.top, -2)
-                .padding(.bottom, 4)
                 .padding(.horizontal, 8)
             }
         }

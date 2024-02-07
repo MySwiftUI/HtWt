@@ -21,7 +21,7 @@ struct DailyWeatherView: View {
                         .frame(width: 16, height: 16)
                         .padding(.leading, 12)
                     
-                    Text("10일간의 일기예보")
+                    Text("5일간의 일기예보")
                         .font(.system(size: 16))
                         .fontWeight(.medium)
                     
