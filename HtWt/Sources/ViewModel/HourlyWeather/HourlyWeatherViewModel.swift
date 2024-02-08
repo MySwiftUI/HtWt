@@ -15,7 +15,9 @@ final class HourlyWeatherViewModel: ObservableObject {
     ) {
         hourlyWeatherDataHandler(data: data)
     }
-    
+}
+
+private extension HourlyWeatherViewModel {
     /// 현재시간 이전 및 내일모레 초과인지 체크하는 기능
     func compareTime(
         from target: String
