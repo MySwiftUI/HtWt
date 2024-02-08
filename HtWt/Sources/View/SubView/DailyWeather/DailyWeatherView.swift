@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DailyWeatherView: View {
+    @ObservedObject var viewModel: DailyWeatherViewModel
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -31,23 +33,17 @@ struct DailyWeatherView: View {
                 .foregroundColor(.white)
                 .opacity(0.6)
                 
-                ForEach(0..<10) { idx in
+                ForEach(viewModel.dailyWeatherViewItem) { item in
                     Divider()
                         .background(.white)
                         .padding(.horizontal, 12)
                     
-                    DailyWeatherInfoView(isToday: idx == 0)
+                    DailyWeatherInfoView(dailyWeatherItem: item)
                         .padding(.vertical, -12)
                 }
             }
             .padding(.bottom, 8)
         }
         .cornerRadius(12)
-    }
-}
-
-struct DailyWeatherView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyWeatherView()
     }
 }
