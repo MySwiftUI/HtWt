@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DailyWeatherInfoView: View {
-    @State var isToday: Bool
+    @State var dailyWeatherItem: DailyWeatherItem
     
     var body: some View {
         ZStack {
@@ -17,17 +17,17 @@ struct DailyWeatherInfoView: View {
                 .opacity(0)
             
             HStack(spacing: 42) {
-                Text("오늘")
+                Text(dailyWeatherItem.timeText)
                     .font(.system(size: 24))
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                 
-                Image("01d")
+                Image(dailyWeatherItem.weatherImageName)
                     .resizable()
                     .frame(width: 32, height: 32)
                 
                 HStack(spacing: 8) {
-                    Text("-8º")
+                    Text(dailyWeatherItem.minTemp)
                         .font(.system(size: 22))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -49,20 +49,18 @@ struct DailyWeatherInfoView: View {
                                 .offset(x: 10)      /// offset X 잡아줘야 할 것으로 보임
                         }
                         
-                        if isToday {
-                            Circle()
-                                .foregroundColor(.white)
-                                .overlay(Circle()
-                                    .stroke(lineWidth: 3)
-                                    .foregroundColor(.black).opacity(0.2)
-                                )
-                                .frame(width: 5, height: 5)
-                                .offset(x: -15)         /// 현재 온도 표시(offset x 위치 조정)
-                        }
+                        Circle()
+                            .foregroundColor(.white)
+                            .overlay(Circle()
+                                .stroke(lineWidth: 3)
+                                .foregroundColor(.black).opacity(0.2)
+                            )
+                            .frame(width: 5, height: 5)
+                            .offset(x: -15)         /// 현재 온도 표시(offset x 위치 조정)
                     }
                     .frame(height: 5)
                     
-                    Text("3º")
+                    Text(dailyWeatherItem.maxTemp)
                         .font(.system(size: 22))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
