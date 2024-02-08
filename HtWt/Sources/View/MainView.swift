@@ -26,7 +26,9 @@ struct MainView: View {
                         viewModel: HourlyWeatherViewModel(data: viewModel.hourlyWeatherData)
                     )
                     
-                    DailyWeatherView()
+                    DailyWeatherView(
+                        viewModel: DailyWeatherViewModel(data: viewModel.hourlyWeatherData)
+                    )
                         .padding(.top, 12)
                     
                     AirQualityView()
