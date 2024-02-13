@@ -38,7 +38,20 @@ struct DailyWeatherView: View {
                         .background(.white)
                         .padding(.horizontal, 12)
                     
-                    DailyWeatherInfoView(dailyWeatherItem: item)
+                    DailyWeatherInfoView(
+                        dailyWeatherItem: item,
+                        geoWidth: viewModel.calculateWidth(
+                            maxTemp: item.maxTemp,
+                            highestTemp: item.highestTemp,
+                            minTemp: item.minTemp,
+                            lowestTemp: item.lowestTemp
+                        ),
+                        geoOffset: viewModel.calculateOffset(
+                            minTemp: item.minTemp,
+                            lowestTemp: item.lowestTemp,
+                            highestTemp: item.highestTemp
+                        )
+                    )
                         .padding(.vertical, -12)
                 }
             }
