@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DailyWeatherInfoView: View {
     @State var dailyWeatherItem: DailyWeatherItem
+    @State var geoWidth: CGFloat
+    @State var geoOffset: CGFloat
     
     var body: some View {
         ZStack {
@@ -27,7 +29,7 @@ struct DailyWeatherInfoView: View {
                     .frame(width: 32, height: 32)
                 
                 HStack(spacing: 8) {
-                    Text(dailyWeatherItem.minTemp)
+                    Text("\(Int(dailyWeatherItem.minTemp))º")
                         .font(.system(size: 22))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -45,8 +47,8 @@ struct DailyWeatherInfoView: View {
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 ))
-                                .frame(width: 80)   /// 10일 중 최저와 최대로 나누어 양 끝도 빌 수 있음
-                                .offset(x: 10)      /// offset X 잡아줘야 할 것으로 보임
+                                .frame(width: geoWidth)
+                                .offset(x: geoOffset)
                         }
                         
                         Circle()
@@ -60,7 +62,7 @@ struct DailyWeatherInfoView: View {
                     }
                     .frame(height: 5)
                     
-                    Text(dailyWeatherItem.maxTemp)
+                    Text("\(Int(dailyWeatherItem.maxTemp))º")
                         .font(.system(size: 22))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
