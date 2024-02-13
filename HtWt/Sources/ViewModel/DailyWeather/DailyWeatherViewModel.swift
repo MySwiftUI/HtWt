@@ -16,19 +16,53 @@ final class DailyWeatherViewModel: ObservableObject {
         dailyWeatherDataHandler(data: data)
     }
 }
+
+// MARK: - GeometryReader width/offset 등 UI 관련 기능
+extension DailyWeatherViewModel {
+    func calculateWidth(
+        maxTemp: Double,
+        highestTemp: Double,
+        minTemp: Double,
+        lowestTemp: Double
+    ) -> CGFloat {
+        // FIXME: - API 오류로 minTemp, maxTemp가 같은 값으로 오는 중이라 임시 guard문
+        guard maxTemp == minTemp else {
+            let overall = abs(highestTemp) + abs(lowestTemp)
+            let gap = (abs(highestTemp) - abs(maxTemp)) + (abs(lowestTemp) - abs(minTemp))
+            return 100 * (abs(overall) - abs(gap)) / overall
+        }
+        return 10
+    }
+    
+    func calculateOffset(
+        minTemp: Double,
+        lowestTemp: Double,
+        highestTemp: Double
+    ) -> CGFloat {
+        let overall = abs(highestTemp) + abs(lowestTemp)
+        let gap = abs(abs(lowestTemp) - abs(minTemp))
+        return 100 * gap / overall
+    }
+}
  
+
+// MARK: - 5일간 날씨 응답값 핸들링 관련한 기능들
 private extension DailyWeatherViewModel {
     /// DailyWeatherView에서 필요한 데이터만 핸들링 하는 기능
     func dailyWeatherDataHandler(
         data: [HourlyWeatherData]
     ) {
+        var lowestTemp: Double = 0.0
+        var highestTemp: Double = 0.0
         var appendData = DailyWeatherItem(
             id: UUID(),
             timeText: "",
             weatherImageName: "01d",
-            minTemp: "",
-            maxTemp: "",
-            currentTemp: ""
+            currentTemp: "",
+            minTemp: 0.0,
+            maxTemp: 0.0,
+            lowestTemp: lowestTemp,
+            highestTemp: highestTemp
         )
         
         for i in 0..<data.count {
@@ -39,8 +73,13 @@ private extension DailyWeatherViewModel {
                 appendData.timeText = i == 0 ? "오늘" : changeFullDateToDayString(from: time)
                 appendData.weatherImageName = data[i].weather.first?.icon ?? "01d"
                 appendData.currentTemp = "\(Int(data[i].main.temp))º"
-                appendData.minTemp = "\(Int(data[i].main.tempMin))º"
-                appendData.maxTemp = "\(Int(data[i].main.tempMax))º"
+                appendData.minTemp = data[i].main.tempMin
+                appendData.maxTemp = data[i].main.tempMax
+                
+                lowestTemp = min(lowestTemp, data[i].main.tempMin)
+                highestTemp = max(highestTemp, data[i].main.tempMax)
+                appendData.lowestTemp = lowestTemp
+                appendData.highestTemp = highestTemp
                 dailyWeatherViewItem.append(appendData)
             }
         }
